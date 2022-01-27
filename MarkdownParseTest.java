@@ -38,4 +38,13 @@ public class MarkdownParseTest {
         assertEquals(List.of(),
         links );
     }
+
+    @Test
+    public void testLinks4()  throws IOException {
+        Path fileName = Path.of("test-file4.md");
+	    String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals("test failed!", List.of("somethingthatcanbreak.com/()123"),
+        links );
+    }
 }
