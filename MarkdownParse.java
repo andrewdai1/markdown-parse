@@ -17,17 +17,27 @@ public class MarkdownParse {
                 break;
             }
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
+
+            if (nextCloseBracket == -1) {
+                break;
+            }
+
             int openParen = markdown.indexOf("(", nextCloseBracket);
+
+            if (openParen == -1) {
+                break;
+            }
+
             int closeParen = markdown.indexOf(")", openParen);
 
-            if(nextOpenBracket >= 1 && markdown.charAt(nextOpenBracket-1) == '!') {
-                currentIndex = closeParen + 1;
-                continue;
+            if (closeParen == -1) {
+                break;
             }
 
             toReturn.add(markdown.substring(openParen + 1, closeParen));
             currentIndex = closeParen + 1;
-
+            
+            
         }
         return toReturn;
     }
