@@ -51,5 +51,5 @@ public class MarkdownParseTest {
     //     ArrayList<String> links = MarkdownParse.getLinks(contents);
     //     assertEquals("test failed!", List.of("somethingthatcanbreak.com/()123"),
     //     links );
-    }
+    //}
 }
