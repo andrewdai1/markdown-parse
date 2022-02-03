@@ -13,11 +13,11 @@ public class MarkdownParseTest {
     }
 
     @Test
-    public void failtest() {
+    public void failtest() throws IOException {
         Path fileName = Path.of("test-file5.md");
         String contents = Files.readString(fileName);
         ArrayList<String> links = MarkdownParse.getLinks(contents);
-        assertEquals(List.of("google.com","example.com"), links);
+        assertEquals(List.of("google.com"), links);
     }
 
    
