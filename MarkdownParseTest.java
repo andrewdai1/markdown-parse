@@ -12,11 +12,15 @@ public class MarkdownParseTest {
                 assertEquals(2, 1 + 1);
     }
 
-        // @Test
-        // public void error() {
-        //     assertEquals(3,4);
-        // }
+    @Test
+    public void failtest() {
+        Path fileName = Path.of("test-file5.md");
+        String contents = Files.readString(fileName);
+        ArrayList<String> links = MarkdownParse.getLinks(contents);
+        assertEquals(List.of("google.com","example.com"), links);
+    }
 
+   
     // @Test
     // public void testLinks()  throws IOException {
     //     Path fileName = Path.of("test-file.md");
@@ -51,5 +55,5 @@ public class MarkdownParseTest {
     //     ArrayList<String> links = MarkdownParse.getLinks(contents);
     //     assertEquals("test failed!", List.of("somethingthatcanbreak.com/()123"),
     //     links );
-    //}
+    // }
 }
