@@ -12,10 +12,10 @@ public class MarkdownParseTest {
                 assertEquals(2, 1 + 1);
     }
 
-        @Test
-        public void error() {
-            assertEquals(3,4);
-        }
+        // @Test
+        // public void error() {
+        //     assertEquals(3,4);
+        // }
 
     // @Test
     // public void testLinks()  throws IOException {
